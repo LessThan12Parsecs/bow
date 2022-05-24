@@ -335,7 +335,7 @@ export default e => {
       if (arrowApp) {
         const modelBones = localPlayer.avatar.modelBones;
         const {/*Root, */Left_wrist, Right_wrist} = modelBones;
-        Left_wrist.matrixWorld.decompose(localVector, localQuaternion, localVector2);
+        Right_wrist.matrixWorld.decompose(localVector, localQuaternion, localVector2);
         Right_wrist.matrixWorld.decompose(localVector3, localQuaternion2, localVector4);
 
         localQuaternion.multiply(yN90Quaternion);
