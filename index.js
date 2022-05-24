@@ -236,7 +236,7 @@ export default e => {
 
         const timeDiff = timestamp - localPlayer.characterPhysics.lastBowUseStartTime;
         if (timeDiff >= bowUseTime) {
-          pendingArrowApp.velocity.set(0, 0, -20)
+          pendingArrowApp.velocity.set(0, 10, -200)
             .applyQuaternion(
               pendingArrowApp.quaternion
             );
@@ -366,7 +366,7 @@ export default e => {
         bowApp.stringBone.position.lerp(bowApp.stringBone.originalPosition, 0.9);
         if (arrowApp && timeDiff > bowStringTime) {
           bowApp.stringBone.position.copy(localVector3)
-            .add(localVector4.set(0, 0, -0.1).applyQuaternion(localQuaternion2))
+            .add(localVector4.set(0, 4, -0.1).applyQuaternion(localQuaternion2))
             .applyMatrix4(localMatrix.copy(bowApp.stringBone.parent.matrixWorld).invert());
         }
         bowApp.stringBone.updateMatrixWorld();
